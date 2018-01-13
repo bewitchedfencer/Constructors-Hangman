@@ -1,0 +1,22 @@
+{
+  "name": "constructors-hangman",
+  "version": "1.0.0",
+  "description": "Constructor Hangman Game",
+  "main": "letter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bewitchedfencer/Constructors-Hangman.git"
+  },
+  "author": "Alexa Robinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bewitchedfencer/Constructors-Hangman/issues"
+  },
+  "homepage": "https://github.com/bewitchedfencer/Constructors-Hangman#readme",
+  "dependencies": {
+    "promptly": "^2.2.0"
+  }
+}

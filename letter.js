@@ -1,0 +1,1 @@
+//constructor for letter object
