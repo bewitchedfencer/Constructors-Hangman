@@ -6,6 +6,7 @@ var guesses = [];
 var remainingGuesses = 20;
 let chosenWord = new Word;
 var letterArray = [];
+var allTrue = false;
 
 function startGame(){
 inquirer
@@ -25,7 +26,6 @@ inquirer
         var k = chosenWord.addLetters(chosenWord.word[i]);  
         letterArray.push(k);
         };   
-        chosenWord.displayWord(letterArray);        
         Ask();
     }
     else{
@@ -35,6 +35,8 @@ inquirer
 };
 
 function Ask(){
+    chosenWord.displayWord(letterArray);    
+    remainingGuesses--;    
     inquirer
     .prompt([
         {
@@ -44,17 +46,25 @@ function Ask(){
           }
     ])
     .then(function(answer){
-        console.log(`You guessed ${answer.letterGuess}. \nYou have ${remainingGuesses} guesses left.`);
-        chosenWord.displayWord(letterArray);
-        guesses.push(answer.letterGuess);
-        remainingGuesses--;
-        console.log(letterArray);
-        if(answer.letterGuess&&remainingGuesses>0){
-            Ask();
+        console.log(`You guessed ${answer.letterGuess.toUpperCase()}. \nYou have ${remainingGuesses} guesses left. Spaces can be guessed too!`);
+        guesses.push(answer.letterGuess.toUpperCase());
+        for(var m = 0; m < letterArray.length; m++){
+            letterArray[m].checkLetter(answer.letterGuess.toUpperCase());
+        }
+        if(chosenWord.truthiness === letterArray.length){
+            allTrue=true;
+        }
+        console.log(letterArray); 
+        if(allTrue===true){
+            console.log("Congrats! You won!");
+            startGame();
         }
         else if (remainingGuesses===0){
             console.log(`Game over! You have 0 guesses remaining. \n Would you like to play again?`);
             startGame();
+        }
+        else if(answer.letterGuess&&remainingGuesses>0){
+            Ask();
         }
         else{
             console.log("Choose a letter.");

@@ -3,13 +3,10 @@
 function Letter(letter){
     this.value = letter.toUpperCase();
     this.isGuessed = false;
-    //this method could be a prototype instead
     this.checkLetter = function(userInput){
-        if(userInput === this.value){
+        if(userInput.toUpperCase() === this.value){
             this.isGuessed = true;
-        }
-        else{
-            this.isGuessed = false;
+            console.log(this.isGuessed);
         }
     };
     this.displayLetter = function(){
@@ -20,6 +17,7 @@ function Letter(letter){
             return "__";
         }
     };
+    
 };
 
 module.exports = Letter;
