@@ -1,8 +1,8 @@
 {
   "name": "constructors-hangman",
   "version": "1.0.0",
-  "description": "Constructor Hangman Game",
-  "main": "letter.js",
+  "description": "A game of hangman in Javascript for Node.JS using constructors.",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/bewitchedfencer/Constructors-Hangman.git"
   },
-  "author": "Alexa Robinson",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bewitchedfencer/Constructors-Hangman/issues"
   },
   "homepage": "https://github.com/bewitchedfencer/Constructors-Hangman#readme",
   "dependencies": {
-    "promptly": "^2.2.0"
+    "inquirer": "^5.0.0"
   }
 }
